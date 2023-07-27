@@ -7,7 +7,7 @@ export const environment = {
   },
   cdn: {
     host: 'cdn.velorum.games',
-    path: 'singularity',
+    path: 'dev',
     map: {
       stars: 'velorum/stars-compressed.json',
       colors: 'velorum/stars-colors.json',
