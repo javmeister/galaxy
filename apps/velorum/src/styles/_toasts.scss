@@ -1,0 +1,38 @@
+sl-alert.velorum-toast {
+  i.danger {
+    --fa-primary-color: var(--sl-color-danger-800);
+    --fa-secondary-color: var(--sl-color-danger-600);
+  }
+  i.success {
+    --fa-primary-color: var(--sl-color-success-800);
+    --fa-secondary-color: var(--sl-color-success-600);
+  }
+  i.warning {
+    --fa-primary-color: var(--sl-color-warning-800);
+    --fa-secondary-color: var(--sl-color-warning-600);
+  }
+}
+
+sl-alert.velorum-toast::part(base) {
+  border-radius: 0;
+  border-top-color: transparent;
+  border-top-width: 0px;
+  border-bottom-width: 0px;
+  border-right-width: 0px;
+  border-left-width: calc(var(--sl-panel-border-width) * 8);
+
+  background: #1c1c21;
+  background: linear-gradient(90deg, #1c1c21 0%, #1c1c21 60%, rgba(0, 0, 0, 0) 100%);
+}
+
+sl-alert.velorum-toast[variant="danger"]::part(base) {
+  border-left-color: var(--sl-color-danger-600);
+}
+
+sl-alert.velorum-toast[variant="success"]::part(base) {
+  border-left-color: var(--sl-color-success-600);
+}
+
+sl-alert.velorum-toast[variant="warning"]::part(base) {
+  border-left-color: var(--sl-color-warning-600);
+}

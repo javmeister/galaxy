@@ -1,0 +1,574 @@
+:host {
+  position: absolute;
+  top: 125px;
+  left: 110px;
+
+  z-index: 6;
+
+  width: 400px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  pointer-events: none;
+
+  background-color: #1d262fd6;
+  border: solid 1px #585c5e;
+
+  box-shadow: 0 0 2rem rgb(27 131 220 / 20%), 0 0 6rem rgb(27 131 220 / 15%);
+
+  opacity: 0;
+  transition: 0.2s opacity;
+
+  &.fade-in {
+    opacity: 1;
+    transition: 1s opacity;
+    pointer-events: all;
+  }
+
+
+  .rarity-label {
+    position: absolute;
+
+    line-height: 26px;
+    font-size: 1.3rem;
+    padding: 4px 20px 4px 20px;
+    font-weight: 700;
+    letter-spacing: 3px;
+
+    transform: rotate(-90deg);
+    left: -76px;
+    top: 39px;
+
+    transform: rotate(-90deg);
+
+    text-shadow: none;
+
+    color: #fff;
+
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+  }
+
+  &.common {
+    border: solid 2px #585c5e;
+
+    .rarity-label {
+      left: -76px;
+      top: 39px;
+
+      background-color: #585c5e;
+    }
+
+    .system-stars-heading,
+    .system-planets-heading,
+    .system-resources-heading {
+      background: url('../../../assets/velorum/galaxy-map/textures/diagonal-pattern-2.png');
+      background-size: 50px 100% !important;
+      .label {
+        color: #cccfd1;
+      }
+    }
+
+    .system-stars-heading {
+      background: linear-gradient(0deg, rgb(129 129 129 / 46%) 0%, rgb(64 64 64 / 75%) 80%), url('../../../assets/velorum/galaxy-map/textures/diagonal-pattern-2.png');
+    }
+  }
+
+  &.uncommon {
+    border: solid 2px #dde2e4;
+
+    .rarity-label {
+      left: -88px;
+      top: 51px;
+
+      background-color: #dde2e4;
+      color: #000;
+    }
+
+    .system-stars-heading,
+    .system-planets-heading,
+    .system-resources-heading {
+      background: url('../../../assets/velorum/galaxy-map/textures/diagonal-pattern-2.png');
+      background-size: 50px 100% !important;
+      .label {
+        color: #dde2e4;
+      }
+    }
+
+    .system-stars-heading {
+      background: linear-gradient(0deg, rgb(204 203 203 / 65%) 0%, rgb(138 138 138 / 86%) 80%), url('../../../assets/velorum/galaxy-map/textures/diagonal-pattern-2.png');
+    }
+  }
+
+  &.rare {
+    border: solid 2px #d78d16;
+
+    .rarity-label {
+      left: -61px;
+      top: 23px;
+
+      background-color: #d78d16;
+    }
+
+    .system-stars-heading,
+    .system-planets-heading,
+    .system-resources-heading {
+      background:  url('../../../assets/velorum/galaxy-map/textures/diagonal-pattern-2.png');
+      background-size: 50px 100% !important;
+      .label {
+        color: #dde2e4;
+      }
+    }
+
+    .system-stars-heading {
+      background: linear-gradient(0deg, rgb(183 128 43 / 80%) 0%, rgb(138 94 13 / 80%) 80%), url('../../../assets/velorum/galaxy-map/textures/diagonal-pattern-2.png');
+    }
+  }
+
+  &.epic {
+    border: solid 2px #22b5ef;
+
+    .rarity-label {
+      left: -57px;
+      top: 20px;
+
+      background-color: #22b5ef;
+    }
+
+    .system-stars-heading,
+    .system-planets-heading,
+    .system-resources-heading {
+      background: url('../../../assets/velorum/galaxy-map/textures/diagonal-pattern-2.png');
+      background-size: 50px 100% !important;
+      .label {
+        color: #dde2e4;
+      }
+    }
+
+    .system-stars-heading {
+      background: linear-gradient(0deg, rgb(70 99 128 / 80%) 0%, rgb(71 105 138 / 94%) 80%), url('../../../assets/velorum/galaxy-map/textures/diagonal-pattern-2.png');
+    }
+  }
+
+  .content-container {
+    width: 100%;
+  }
+
+  .bottom-separator {
+    border-bottom: solid 1px #a7aeb36b;
+  }
+
+  .right-separator {
+    border-right: solid 1px #a7aeb36b;
+  }
+
+  .system-stars-heading,
+  .system-planets-heading,
+  .system-resources-heading,
+  .system-other-heading,
+  .system-survey-heading {
+
+    .label {
+      width: 100%;
+
+      text-transform: uppercase;
+
+      font-weight: 700;
+      letter-spacing: 3px;
+      font-size: 1.35rem;
+      line-height: 20px;
+      padding-top: 2px;
+
+      color: #7e8589;
+
+      text-shadow: 1px 0 1px rgb(0 0 0 / 50%), 0 1px 1px rgb(0 0 0 / 50%) !important;
+    }
+  }
+
+  .system-stars-selector {
+    font-weight: 300;
+    font-size: 1.25rem;
+
+    .system-stars-plane {
+      position: absolute;
+      border-bottom: 2px solid #999;
+      width: calc(100% - 2rem); // TODO: brittle AF! if you change the padding in the container
+      height: 2px;
+      z-index: 1;
+    }
+
+    .star-selector {
+      border-radius: 50%;
+
+      z-index: 2;
+
+      border: solid 2px #999;
+      background-color: #182027; // This helps to set a line in between
+
+      width: 20px;
+      height: 20px;
+
+      &:hover {
+        border: solid 2px #ddd;
+        cursor: pointer;
+      }
+
+      &.selected {
+        border: solid 2px #ddd;
+        background-color: #c5af68;
+      }
+
+      &:first-child {
+        margin-right: 10px;
+      }
+
+      &.g2 {
+        background-color: #c5af68;
+      }
+      &.rd,
+      &.rg {
+        background-color: #c56868;
+      }
+      &.bg {
+        background-color: #689dc5;
+      }
+      &.ns {
+        background-color: #70c568;
+      }
+      &.wd,
+      &.psr,
+      &.sg {
+        background-color: #c0c0c0;
+      }
+
+      &.g2 {
+        width: 30px;
+        height: 30px;
+      }
+      &.rd {
+        width: 20px;
+        height: 20px;
+      }
+      &.rg {
+        width: 60px;
+        height: 60px;
+      }
+      &.bg {
+        width: 60px;
+        height: 60px;
+      }
+      &.sg {
+        width: 70px;
+        height: 70px;
+      }
+      &.wd {
+        width: 15px;
+        height: 15px;
+      }
+      &.ns {
+        width: 10px;
+        height: 10px;
+      }
+      &.psr {
+        width: 10px;
+        height: 10px;
+      }
+    }
+  }
+
+  .system-stars {
+    background-size: 422px;
+    background-repeat: no-repeat;
+    background-position-y: -77px;
+    background-position-x: -71px;
+    background-color: #000;
+
+    .main-label {
+      text-transform: uppercase;
+
+      font-weight: 500;
+      letter-spacing: 3px;
+      font-size: 1.25rem;
+      line-height: 26px;
+
+      color: #ffffff;
+
+      text-shadow: none;
+    }
+
+    .stellar-stat {
+      .label {
+        text-align: left;
+        text-transform: uppercase;
+
+        letter-spacing: 1px;
+        font-size: 1.25rem;
+        line-height: 26px;
+
+        color: #ffffff;
+        font-weight: 300;
+
+        text-shadow: 1px 0 1px rgba(0, 0, 0, 0.5), 0 1px 1px rgba(0, 0, 0, 0.5), -1px 0 1px rgba(0, 0, 0, 0.5), 0 -1px 1px rgba(0, 0, 0, 0.5) !important;
+      }
+      .value {
+        text-align: right;
+        text-transform: uppercase;
+
+        letter-spacing: 1px;
+        font-size: 1.25rem;
+        font-weight: 300;
+        line-height: 26px;
+
+        color: #FFF;
+
+        text-shadow: none;
+        text-shadow: 2px 0 2px rgba(0, 0, 0, 0.5), 0 2px 2px rgba(0, 0, 0, 0.5), -2px 0 2px rgba(0, 0, 0, 0.5), 0 -1px 2px rgba(0, 0, 0, 0.5) !important;
+      }
+    }
+
+    &.g-type-g2 {
+      background-image: url('../../../assets/velorum/galaxy-map/stars/ms-bg.jpg');
+    }
+
+    &.red-dwarf,
+    &.red-giant {
+      background-image: url('../../../assets/velorum/galaxy-map/stars/rd-bg.jpg');
+    }
+
+    &.blue-giant {
+      background-image: url('../../../assets/velorum/galaxy-map/stars/bg-bg.jpg');
+    }
+
+    &.white-dwarf,
+    &.supergiant,
+    &.pulsar {
+      background-image: url('../../../assets/velorum/galaxy-map/stars/wd-bg.jpg');
+    }
+
+    &.neutron-star {
+      background-image: url('../../../assets/velorum/galaxy-map/stars/ns-bg.jpg');
+    }
+  }
+
+  .system-planets-selector {
+    font-weight: 300;
+    font-size: 1.25rem;
+
+    .system-planets-plane {
+      position: absolute;
+      border-bottom: 2px solid #999;
+      width: calc(100% - 2rem); // TODO: brittle AF! if you change the padding in the container
+      height: 2px;
+      z-index: 1;
+    }
+
+    .orbit-selector {
+      border-radius: 50%;
+
+      z-index: 2;
+
+      border: solid 2px #999;
+      background-color: #182027; // This helps to set a line in between
+
+      width: 20px;
+      height: 20px;
+
+      &:hover {
+        border: solid 2px #ddd;
+        cursor: pointer;
+      }
+
+      &.selected {
+        border: solid 2px #ddd;
+        background-color: #638aac;
+      }
+
+      &.classd {
+        width: 12px;
+        height: 12px;
+      }
+      &.classy {
+        width: 20px;
+        height: 20px;
+      }
+      &.classl {
+        width: 25px;
+        height: 25px;
+      }
+      &.classm {
+        width: 30px;
+        height: 30px;
+      }
+      &.classk {
+        width: 25px;
+        height: 25px;
+      }
+      &.classt {
+        width: 70px;
+        height: 70px;
+      }
+      &.classj {
+        width: 55px;
+        height: 55px;
+      }
+      &.classh {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+  .system-planets {
+    background-size: 261px;
+    background-repeat: no-repeat;
+    background-position-y: 14px;
+    background-color: #000;
+
+    &.bottom-separator:not(:last-child) {
+      border-width: 5px;
+      border-color: rgba(29, 38, 47, 0.84);
+    }
+
+    .main-label {
+      text-transform: uppercase;
+
+      font-weight: 500;
+      letter-spacing: 3px;
+      font-size: 1.25rem;
+      line-height: 26px;
+
+      color: #ffffff;
+
+      text-shadow: none;
+    }
+
+    .planet-stat {
+      .label {
+        text-align: left;
+        text-transform: uppercase;
+
+        letter-spacing: 1px;
+        font-size: 1.25rem;
+        line-height: 26px;
+
+        color: #becedc;
+        font-weight: 100;
+
+        text-shadow: 2px 0 2px rgba(0, 0, 0, 0.5), 0 2px 2px rgba(0, 0, 0, 0.5), -2px 0 2px rgba(0, 0, 0, 0.5), 0 -1px 2px rgba(0, 0, 0, 0.5) !important;
+      }
+      .value {
+        text-align: right;
+        text-transform: uppercase;
+
+        letter-spacing: 1px;
+        font-size: 1.25rem;
+        font-weight: 300;
+        line-height: 26px;
+
+        color: #FFF;
+        text-shadow: 2px 0 2px rgba(0, 0, 0, 0.5), 0 2px 2px rgba(0, 0, 0, 0.5), -2px 0 2px rgba(0, 0, 0, 0.5), 0 -1px 2px rgba(0, 0, 0, 0.5) !important;
+      }
+    }
+
+
+    &.classd {
+      background-image: url('../../../assets/velorum/galaxy-map/planets/moon_05.jpg'); //
+    }
+    &.classh {
+      background-image: url('../../../assets/velorum/galaxy-map/planets/sand_02.jpg'); //
+    }
+    &.classj {
+      background-image: url('../../../assets/velorum/galaxy-map/planets/gas_04.jpg'); //
+    }
+    &.classk {
+      background-image: url('../../../assets/velorum/galaxy-map/planets/moon_06.jpg'); //
+    }
+    &.classl {
+      background-image: url('../../../assets/velorum/galaxy-map/planets/terrestrial-01.jpg'); //
+    }
+    &.classm {
+      background-image: url('../../../assets/velorum/galaxy-map/planets/oceanic_03.jpg'); //
+    }
+    &.classn {
+      background-image: url('../../../assets/velorum/galaxy-map/planets/clouds_03.jpg'); //
+    }
+    &.classr {
+      background-image: url('../../../assets/velorum/galaxy-map/planets/frozen_01.jpg'); //
+    }
+    &.classt {
+      background-image: url('../../../assets/velorum/galaxy-map/planets/gas_01.jpg'); //
+    }
+    &.classy {
+      background-image: url('../../../assets/velorum/galaxy-map/planets/lava_03.jpg'); //
+    }
+  }
+
+  .system-resources {
+    background-size: 363px;
+    background-repeat: no-repeat;
+    background-position-y: -29px;
+    background-position-x: -49px;
+    background-color: #000;
+
+    &.bottom-separator:not(:last-child) {
+      border-width: 5px;
+      border-color: rgba(29, 38, 47, 0.84);
+    }
+
+    .main-label {
+      text-transform: uppercase;
+
+      font-weight: 500;
+      letter-spacing: 3px;
+      font-size: 1.25rem;
+      line-height: 26px;
+
+      color: #ffffff;
+
+      text-shadow: none;
+    }
+
+    .resource-stat {
+      .label {
+        text-align: left;
+        text-transform: uppercase;
+
+        letter-spacing: 1px;
+        font-size: 1.25rem;
+        line-height: 26px;
+
+        color: #becedc;
+        font-weight: 100;
+
+        text-shadow: 2px 0 2px rgba(0, 0, 0, 0.5), 0 2px 2px rgba(0, 0, 0, 0.5), -2px 0 2px rgba(0, 0, 0, 0.5), 0 -1px 2px rgba(0, 0, 0, 0.5) !important;
+      }
+      .value {
+        text-align: right;
+        text-transform: uppercase;
+
+        letter-spacing: 1px;
+        font-size: 1.25rem;
+        font-weight: 300;
+        line-height: 26px;
+
+        color: #FFF;
+        text-shadow: 2px 0 2px rgba(0, 0, 0, 0.5), 0 2px 2px rgba(0, 0, 0, 0.5), -2px 0 2px rgba(0, 0, 0, 0.5), 0 -1px 2px rgba(0, 0, 0, 0.5) !important;
+      }
+    }
+
+
+    &.common {
+      background-image: url('../../../assets/velorum/galaxy-map/asteroids/asteroid_02.jpg'); //
+    }
+    &.uncommon {
+      background-image: url('../../../assets/velorum/galaxy-map/asteroids/asteroid_10.jpg'); //
+    }
+    &.rare {
+      background-image: url('../../../assets/velorum/galaxy-map/asteroids/asteroid_11.jpg'); //
+    }
+  }
+
+}

@@ -1,0 +1,84 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+dist
+tmp
+/out-tsc
+
+# dependencies
+node_modules
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
+.npmrc
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# dotenv
+.env
+.env.*
+
+# nx angular cache
+.angular
+
+# SSL Local CERT
+ssl.crt
+ssl.key
+ssl.csr
+ca.pem
+ca.key
+ca.crt
+ca.srl
+
+# Kendo License File
+kendo-ui-license.txt
+
+# Firebase cache
+.firebase
+.run
+database-debug.log
+firebase-debug.log
+ui-debug.log
+firestore-debug.log
+pubsub-debug.log
+
+# Firebase emulator local config keys
+.runtimeconfig.json
+
+# Ignore Large game files
+apps/velorum/src/assets/game
+
+# Exported Mint Json files
+mints
+
+# Firebase admin creds
+firebase-admin-creds.json
+*/**/auth/singularity-*.json
+
+# Unity game assets
+/apps/velorum/src/assets/games

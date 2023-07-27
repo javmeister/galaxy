@@ -1,0 +1,109 @@
+{
+  "name": "velorum",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "velorum",
+  "sourceRoot": "apps/velorum/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@angular-builders/custom-webpack:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "customWebpackConfig": {
+          "path": "apps/velorum/webpack.config.js"
+        },
+        "outputPath": "dist/apps/velorum",
+        "index": "apps/velorum/src/index.html",
+        "main": "apps/velorum/src/main.ts",
+        "polyfills": "apps/velorum/src/polyfills.ts",
+        "tsConfig": "apps/velorum/tsconfig.app.json",
+        "assets": ["apps/velorum/src/favicon.ico", "apps/velorum/src/assets"],
+        "styles": ["apps/velorum/src/styles.scss"],
+        "scripts": ["node_modules/marked/marked.min.js"],
+        "allowedCommonJsDependencies": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "5mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "50kb",
+              "maximumError": "100kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/velorum/src/environments/environment.ts",
+              "with": "apps/velorum/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all",
+          "vendorChunk": true,
+          "commonChunk": true,
+          "namedChunks": false
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-builders/custom-webpack:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "velorum:build:production"
+        },
+        "development": {
+          "browserTarget": "velorum:build:development",
+          "open": true
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "velorum:build"
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/velorum/**/*.ts", "apps/velorum/**/*.html"]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/velorum/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "velorum:build"
+      }
+    }
+  }
+}

@@ -1,0 +1,350 @@
+:host {
+  position: absolute;
+  top: 125px;
+  right: 60px;
+
+  z-index: 6;
+
+  width: 400px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  pointer-events: none;
+
+  background-color: #1d262fd6;
+  border: solid 1px #585c5e;
+
+  box-shadow: 0 0 2rem rgb(27 131 220 / 20%), 0 0 6rem rgb(27 131 220 / 15%);
+
+  opacity: 0;
+  transition: 0.2s opacity;
+
+  .rarity-label {
+    position: absolute;
+
+    line-height: 26px;
+    font-size: 1.3rem;
+    padding: 4px 20px 4px 20px;
+    font-weight: 700;
+    letter-spacing: 3px;
+
+    transform: rotate(-90deg);
+
+    text-shadow: none;
+
+    color: #fff;
+
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+  }
+
+  &.common {
+    border: solid 2px #585c5e;
+
+    .rarity-label {
+      left: -76px;
+      top: 39px;
+
+      background-color: #585c5e;
+    }
+
+    .system-name {
+      background: linear-gradient(0deg, rgb(129 129 129 / 46%) 0%, rgb(64 64 64 / 75%) 80%), url('../../../assets/velorum/galaxy-map/textures/diagonal-pattern-2.png');
+      .label {
+        color: #cccfd1;
+      }
+    }
+  }
+
+  &.uncommon {
+    border: solid 2px #dde2e4;
+
+    .rarity-label {
+      left: -88px;
+      top: 51px;
+
+      background-color: #dde2e4;
+      color: #000;
+    }
+
+    .system-name {
+      background: linear-gradient(0deg, rgb(204 203 203 / 65%) 0%, rgb(138 138 138 / 86%) 80%), url('../../../assets/velorum/galaxy-map/textures/diagonal-pattern-2.png');
+      .label {
+        color: #dde2e4;
+      }
+    }
+
+  }
+
+  &.rare {
+    border: solid 2px #d78d16;
+
+    .rarity-label {
+      left: -61px;
+      top: 23px;
+
+      background-color: #d78d16;
+    }
+
+    .system-name {
+      background: linear-gradient(0deg, rgb(183 128 43 / 79%) 0%, rgb(138 94 13 / 82%) 80%), url('../../../assets/velorum/galaxy-map/textures/diagonal-pattern-2.png');
+      .label {
+        color: #c0c4c0;
+      }
+    }
+
+  }
+
+  &.epic {
+    border: solid 2px #22b5ef;
+
+    .rarity-label {
+      left: -57px;
+      top: 20px;
+
+      background-color: #22b5ef;
+    }
+
+    .system-name {
+      background: linear-gradient(0deg, rgb(70 99 128 / 80%) 0%, rgb(71 105 138 / 94%) 80%), url('../../../assets/velorum/galaxy-map/textures/diagonal-pattern-2.png');
+      .label {
+        color: #22b5ef;
+      }
+    }
+
+  }
+
+  &.fade-in {
+    opacity: 1;
+    transition: 1s opacity;
+    pointer-events: all;
+  }
+
+  .bottom-separator {
+    border-bottom: solid 1px #a7aeb36b;
+  }
+
+  .system-name {
+    background-size: 100px 100% !important;
+
+    .label {
+      width: 100%;
+
+      text-transform: uppercase;
+
+      font-weight: 700;
+      letter-spacing: 3px;
+      font-size: 1.35rem;
+      line-height: 26px;
+
+      color: #7e8589;
+
+      text-shadow: 1px 0 1px rgb(0 0 0 / 50%), 0 1px 1px rgb(0 0 0 / 50%) !important;
+    }
+
+    .name {
+      width: 100%;
+
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+
+      text-transform: uppercase;
+
+      font-weight: 500;
+      letter-spacing: 3px;
+      font-size: 2rem;
+      line-height: 26px;
+
+      color: #ffffff;
+
+      text-shadow: 1px 0 1px rgb(0 0 0 / 50%), 0 1px 1px rgb(0 0 0 / 50%) !important;
+    }
+  }
+
+  .system-details {
+    font-weight: 300;
+    font-size: 1.25rem;
+
+    .stars-description {
+
+      .star-description {
+
+        .star-icon {
+          width: 34px;
+          height: 52px;
+
+          background-color: #444;
+          border-radius: 3px;
+
+          &.g2 {
+            background-color: rgba(255, 213, 0, 0.1);
+
+            i {
+              --fa-primary-color: #ffb700;
+              --fa-secondary-color: #c99d1b;
+            }
+          }
+          &.rd,
+          &.rg {
+            background-color: rgba(210, 35, 35, 0.1);
+
+            i {
+              --fa-primary-color: #da3012;
+              --fa-secondary-color: #aa361d;
+            }
+          }
+          &.bg {
+            background-color: rgba(35, 137, 210, 0.1);
+
+            i {
+              --fa-primary-color: #128dda;
+              --fa-secondary-color: #1d79aa;
+            }
+          }
+          &.ns {
+            background-color: rgba(35, 210, 128, 0.1);
+
+            i {
+              --fa-primary-color: #0e9610;
+              --fa-secondary-color: #106f15;
+            }
+          }
+          &.wd,
+          &.psr,
+          &.sg {
+            background-color: rgba(255, 255, 255, 0.1);
+          }
+        }
+
+        .star-details {
+          .star-class {
+            font-size: 1.1rem;
+            color: #929699;
+            text-shadow: none;
+          }
+          .star-stats {
+            font-weight: 500;
+            letter-spacing: 1px;
+            font-size: 1.35rem;
+            line-height: 26px;
+
+            color: #fff;
+
+            text-shadow: 1px 0 1px rgb(0 0 0 / 50%), 0 1px 1px rgb(0 0 0 / 50%) !important;
+
+            .radius {
+
+            }
+            .mass {
+
+            }
+            .units {
+              color: #929699;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .nft-details {
+    sl-button::part(base) {
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    sl-button.mint::part(base) {
+      font-weight: 700;
+    }
+
+    sl-button.opensea::part(base) {
+      color: white;
+
+      background-color: #2081e2;
+      border-color: #2081e2;
+    }
+
+    sl-button.magiceden::part(base) {
+      color: white;
+
+      background-color: #e42575;
+      border-color: #e42575;
+    }
+  }
+
+  .system-actions {
+
+
+    .currency-selector-panel {
+      .price,
+      .currency {
+        max-width: 22%;
+        margin-right: 12px;
+      }
+      .btn-start-claim {
+        flex-grow: 1;
+      }
+
+      .price,
+      .currency {
+        border-color: #fff;
+        border-width: 2px;
+        border-radius: 0;
+
+        font-size: 1.2rem;
+
+        padding-top: 3px;
+        padding-bottom: 2px;
+
+        outline: none;
+
+        background-color: #2b2b2b;
+
+        // text-shadow: 0 0 1px rgb(255 255 255 / 30%), 0 0 2px rgb(255 255 255 / 30%), 0 0 5px rgb(255 255 255 / 20%);
+
+        box-shadow: 0 0 2px rgb(255 255 255 / 90%), 0 0 4px rgb(255 255 255 / 40%), 0 0 1rem rgb(255 255 255 / 30%), 0 0 4rem rgb(255 255 255 / 10%);
+      }
+    }
+
+    .claiming-progress-panel {
+      .stepspinner {
+        position: relative;
+        &.step1 {
+          top: -32px;
+        }
+        &.step2 {
+
+        }
+        &.step3 {
+          top: 32px;
+        }
+      }
+
+      .step {
+
+        &.done {
+          i {
+            --fa-primary-color: #fff;
+            --fa-secondary-color: #1ed05f;
+
+            &.fa-check {
+              --fa-primary-color: #1ed05f;
+            }
+          }
+        }
+
+        &.active {
+          --fa-primary-color: #fff;
+          --fa-secondary-color: #226cc6;
+        }
+
+      }
+    }
+  }
+
+}

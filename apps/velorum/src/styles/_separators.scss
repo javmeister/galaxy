@@ -1,0 +1,28 @@
+.separator {
+  height: 1px;
+  display: block;
+  margin: 0 auto;
+  &.gold {
+    background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0) 0%,
+      #ffbe4d99 20%,
+      #ffbe4d99 80%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  }
+
+  &.orange {
+    background-color: #ffc5622b;
+  }
+
+  &.blue {
+    background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0) 0%,
+      #4dbeff99 20%,
+      #4dbeff99 80%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  }
+}

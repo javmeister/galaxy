@@ -1,0 +1,99 @@
+<div class="rarity-label uppercase">{{ rarity }}</div>
+
+<div class="system-stars-heading p-3 w-full bottom-separator flex flex-col flex-fill">
+  <span class="label">STARS</span>
+</div>
+
+<div class="system-stars-selector p-3 w-full bottom-separator flex flex-row items-center justify-center">
+  <span class="star-selector"
+    [ngClass]="getStarSelectorClassName(star)"
+    *ngFor="let star of stars"
+    (mouseenter)="selectStar(star)"></span>
+</div>
+
+<div class="system-stars-container w-full">
+  <div class="system-stars p-3 w-full bottom-separator flex flex-col flex-fill"
+    [ngClass]="selectedStar?.stellarClassSlug">
+
+    <div class="stellar-stat flex flex-row items-center justify-between flex-fill">
+      <span class="label">SPECTRAL TYPE</span>
+      <span class="value">{{ selectedStar?.spectralType }}</span>
+    </div>
+
+    <div class="stellar-stat flex flex-row items-center justify-between flex-fill">
+      <span class="label">RADIUS</span>
+      <span class="value">{{ selectedStar?.radius | number }}R☉</span>
+    </div>
+
+    <div class="stellar-stat flex flex-row items-center justify-between flex-fill">
+      <span class="label">MASS</span>
+      <span class="value">{{ selectedStar?.mass | number }}M☉</span>
+    </div>
+
+    <div class="stellar-stat flex flex-row items-center justify-between flex-fill">
+      <span class="label">TEMPERATURE</span>
+      <span class="value">{{ selectedStar?.temperature | number }}K</span>
+    </div>
+
+  </div>
+</div>
+
+<div class="system-planets-heading p-3 w-full bottom-separator flex flex-row flex-fill">
+  <span class="label">PLANETS</span>
+</div>
+
+<div *ngIf="planets.length === 0" class="system-planets-container w-full">
+  <div class="system-planets  p-3 w-full bottom-separator flex flex-col flex-fill">
+    <span class="main-label">NO KNOWN PLANETS</span>
+  </div>
+</div>
+
+<div *ngIf="planets.length > 0" class="system-planets-selector p-3 w-full bottom-separator flex flex-row items-center justify-between">
+  <span class="orbit-selector"
+    [ngClass]="getOrbitSelectorClassName(planet)"
+    *ngFor="let planet of planets"
+    (mouseenter)="selectPlanet(planet)"></span>
+
+  <div class="system-planets-plane"></div>
+</div>
+
+<div *ngIf="planets.length > 0" class="system-planets-container w-full">
+  <div [ngClass]="getPlanetClassName(selectedPlanet?.type)" class="system-planets  p-3 w-full bottom-separator flex flex-col flex-fill">
+
+    <div class="planet-stat flex flex-row items-center justify-between flex-fill">
+      <span class="label">ORBIT</span>
+      <span class="value">{{ selectedPlanet?.orbit }}</span>
+    </div>
+    <div class="planet-stat flex flex-row items-center justify-between flex-fill">
+      <span class="label">CLASSIFICATION</span>
+      <span class="value">{{ getPlanetClassification(selectedPlanet?.type) }}</span>
+    </div>
+    <div class="planet-stat flex flex-row items-center justify-between flex-fill">
+      <span class="label">DESCRIPTION</span>
+      <span class="value uppercase">{{ getPlanetClassDescription(selectedPlanet?.type) }}</span>
+    </div>
+  </div>
+
+</div>
+
+<div class="system-resources-heading p-3 w-full bottom-separator flex flex-col flex-fill">
+  <span class="label">RESOURCES</span>
+</div>
+
+<div class="system-resources-container w-full flex flex-col items-center justify-between">
+  <div class="system-resources common p-3 w-full">
+
+    <div class="resource-stat flex flex-row items-center justify-between flex-fill">
+      <span class="label">COMMON</span>
+      <span class="value">{{ system?.resources?.common | number }}%</span>
+    </div>
+    <div class="resource-stat flex flex-row items-center justify-between flex-fill">
+      <span class="label">UNCOMMON</span>
+      <span class="value">{{ system?.resources?.uncommon | number }}%</span>
+    </div>
+    <div class="resource-stat flex flex-row items-center justify-between flex-fill">
+      <span class="label">RARE</span>
+      <span class="value">{{ system?.resources?.rare | number }}%</span>
+    </div>
+  </div>
+</div>

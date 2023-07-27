@@ -1,0 +1,13 @@
+<velorum-game-system-details [ngClass]="{'fade-in': showDetails}"></velorum-game-system-details>
+<velorum-game-system-extended-details [ngClass]="{'fade-in': showExtendedDetails}"></velorum-game-system-extended-details>
+
+<div class="actions center">
+  <velorum-game-button class="deselect-system-action"
+    [keyCode]="'Escape'"
+    [keyCodeText]="'ESC'"
+    [text]="'Deselect'"
+    [round]="false"
+    [ngClass]="{'fade-in': showActionButtons}"
+    (pressed)="onDeselectActionClick()"
+    (click)="onDeselectActionClick($event)"></velorum-game-button>
+</div>
