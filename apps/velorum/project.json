@@ -18,7 +18,11 @@
         "main": "apps/velorum/src/main.ts",
         "polyfills": "apps/velorum/src/polyfills.ts",
         "tsConfig": "apps/velorum/tsconfig.app.json",
-        "assets": ["apps/velorum/src/favicon.ico", "apps/velorum/src/assets"],
+        "assets": [
+          "apps/velorum/src/favicon.ico",
+          "apps/velorum/src/assets",
+          "apps/velorum/src/404.html"
+        ],
         "styles": ["apps/velorum/src/styles.scss"],
         "scripts": ["node_modules/marked/marked.min.js"],
         "allowedCommonJsDependencies": []
