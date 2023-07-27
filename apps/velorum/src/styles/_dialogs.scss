@@ -1,0 +1,217 @@
+.poi-dialog::part(base) {
+
+}
+
+.poi-dialog::part(panel) {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+
+  background: linear-gradient(0deg, rgb(9 32 59 / 96%) 0%, rgb(9 25 42 / 94%) 80%), url(../assets/velorum/ui/diagonal-pattern-2.png);
+}
+
+.poi-dialog::part(header) {
+  font-family: 'Saira Extra Condensed', sans-serif;
+
+  background-color: #00000070;
+}
+
+.poi-dialog::part(header-actions) {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.poi-dialog::part(title) {
+  padding: 0.5rem 1.25rem;
+
+  border-left: 4px solid var(--sl-color-danger-400);
+
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 3px;
+  font-size: 1.35rem;
+  text-shadow: 1px 0 1px rgb(0 0 0 / 50%), 0 1px 1px rgb(0 0 0 / 50%) !important;
+}
+
+.poi-dialog::part(close-button) {
+  border-top-right-radius: 6px;
+
+  width: 46px;
+
+  justify-content: center;
+
+  &:hover {
+    cursor: pointer;
+    background-color: var(--sl-color-danger-400);
+  }
+}
+
+.poi-dialog::part(close-button__base) {
+  color: white;
+}
+
+
+.poi-dialog.primary::part(title) {
+  border-left: 4px solid var(--sl-color-primary-400);
+}
+
+.poi-dialog.primary::part(close-button) {
+  &:hover {
+    background-color: var(--sl-color-primary-400);
+  }
+}
+
+.poi-dialog.success::part(title) {
+  border-left: 4px solid var(--sl-color-success-400);
+}
+
+.poi-dialog.success::part(close-button) {
+  &:hover {
+    background-color: var(--sl-color-success-400);
+  }
+}
+
+.poi-dialog.warning::part(title) {
+  border-left: 4px solid var(--sl-color-warning-400);
+}
+
+.poi-dialog.warning::part(close-button) {
+  &:hover {
+    background-color: var(--sl-color-warning-400);
+  }
+}
+
+.poi-dialog.danger::part(title) {
+  border-left: 4px solid var(--sl-color-danger-400);
+}
+
+.poi-dialog.danger::part(close-button) {
+  &:hover {
+    background-color: var(--sl-color-danger-400);
+  }
+}
+
+
+.modern-dialog::part(panel) {
+  border: solid 2px #dde2e4;
+  border-radius: 0;
+  background: linear-gradient(0deg, rgb(12 24 37 / 96%) 0%, rgb(20 30 40 / 94%) 80%), url(../assets/velorum/ui/diagonal-pattern-2.png);
+}
+.modern-dialog::part(header) {
+  background: url('../assets/velorum/galaxy-map/textures/diagonal-pattern-2.png');
+  background-size: 50px 100% !important;
+  background: linear-gradient(0deg, rgb(204 203 203 / 65%) 0%, rgb(138 138 138 / 86%) 80%), url('../assets/velorum/galaxy-map/textures/diagonal-pattern-2.png');
+}
+.modern-dialog::part(header) {
+  font-family: 'Saira Extra Condensed', sans-serif;
+  background-color: #00000070;
+}
+.modern-dialog::part(header-actions) {
+  padding-right: 0;
+  padding-left: 0;
+}
+.modern-dialog::part(title) {
+  padding: 0.5rem 1.25rem;
+
+  border-left: 4px solid var(--sl-color-danger-400);
+
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 3px;
+  font-size: 1.35rem;
+  text-shadow: 1px 0 1px rgb(0 0 0 / 50%), 0 1px 1px rgb(0 0 0 / 50%) !important;
+}
+
+.modern-dialog::part(close-button) {
+  width: 46px;
+
+  justify-content: center;
+
+  &:hover {
+    cursor: pointer;
+    background-color: var(--sl-color-danger-400);
+  }
+}
+
+
+.modern-dialog.primary::part(panel) {
+  border: solid 2px #dde2e4;
+}
+.modern-dialog.primary::part(title) {
+  border-left: 20px solid #dde2e4;
+}
+.modern-dialog.primary::part(close-button) {
+  &:hover {
+    background-color: #dde2e4;
+  }
+}
+.modern-dialog.primary::part(close-button__base) {
+  color: white;
+  &:hover {
+    color: #000;
+  }
+}
+
+.modern-dialog.success::part(panel) {
+  border: solid 2px var(--sl-color-success-400);
+}
+.modern-dialog.success::part(header){
+  background: linear-gradient(0deg, rgb(43 183 45 / 80%) 0%, rgb(13 138 31 / 80%) 80%), url('../assets/velorum/galaxy-map/textures/diagonal-pattern-2.png');
+}
+.modern-dialog.success::part(title) {
+  border-left: 20px solid var(--sl-color-success-400);
+}
+.modern-dialog.success::part(close-button) {
+  &:hover {
+    background-color: var(--sl-color-success-400);
+  }
+}
+.modern-dialog.success::part(close-button__base) {
+  color: #fff;
+  &:hover {
+    color: #000;
+  }
+}
+
+.modern-dialog.warning::part(panel) {
+  border: solid 2px var(--sl-color-warning-400);
+}
+.modern-dialog.warning::part(header){
+  background: linear-gradient(0deg, rgb(183 128 43 / 80%) 0%, rgb(138 94 13 / 80%) 80%), url('../assets/velorum/galaxy-map/textures/diagonal-pattern-2.png');
+}
+.modern-dialog.warning::part(title) {
+  border-left: 20px solid var(--sl-color-warning-400);
+}
+.modern-dialog.warning::part(close-button) {
+  &:hover {
+    background-color: var(--sl-color-warning-400);
+  }
+}
+.modern-dialog.warning::part(close-button__base) {
+  color: #fff;
+  &:hover {
+    color: #000;
+  }
+}
+
+.modern-dialog.danger::part(panel) {
+  border: solid 2px var(--sl-color-danger-400);
+}
+.modern-dialog.danger::part(header){
+  background: linear-gradient(0deg, rgb(183 43 43 / 80%) 0%, rgb(138 13 13 / 80%) 80%), url('../assets/velorum/galaxy-map/textures/diagonal-pattern-2.png');
+}
+.modern-dialog.danger::part(title) {
+  border-left: 20px solid var(--sl-color-danger-400);
+}
+.modern-dialog.danger::part(close-button) {
+  &:hover {
+    background-color: var(--sl-color-danger-400);
+  }
+}
+.modern-dialog.danger::part(close-button__base) {
+  color: #fff;
+  &:hover {
+    color: #000;
+  }
+}

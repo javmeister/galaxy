@@ -1,0 +1,14 @@
+<div class="grouper" [ngClass]="{'fade-in': fadeIn$ | async}">
+  <sl-tooltip content="{{ sectorsTooltip }}" placement="bottom">
+    <div class="stat second mr-4">
+      <span class="label"><i class="fa-solid fa-circle"></i></span>
+      <span class="value">{{ sectorsValue }}</span>
+    </div>
+  </sl-tooltip>
+  <sl-tooltip content="{{ systemsTooltip }}" placement="bottom">
+    <div class="stat third">
+      <span class="label"><i class="fa-regular fa-circle"></i></span>
+      <span class="value">{{ systemsValue }}</span>
+    </div>
+  </sl-tooltip>
+</div>

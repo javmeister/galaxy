@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@100;300&family=Saira+Extra+Condensed:wght@100;300;500;700&family=Rajdhani:wght@300;500;700&display=swap');
+
+@import '../../../node_modules/@shoelace-style/shoelace/dist/themes/dark.css';
+
+@import 'styles/global';
+@import 'styles/buttons';
+@import 'styles/dialogs';
+@import 'styles/scroll';
+@import 'styles/animations';
+@import 'styles/separators';
+@import 'styles/webgl';
+@import 'styles/marked';
+@import 'styles/toasts';
+
+// Font Awesome.
+@import '../../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome';
+@import '../../../node_modules/@fortawesome/fontawesome-free/scss/regular';
+@import '../../../node_modules/@fortawesome/fontawesome-free/scss/brands';
+@import '../../../node_modules/@fortawesome/fontawesome-free/scss/solid';
+

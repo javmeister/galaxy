@@ -1,0 +1,46 @@
+:host {
+  .social {
+    position: fixed;
+    bottom: 5px;
+    right: 20px;
+    display: flex;
+    flex-direction: row;
+    z-index: 10;
+
+    &.in {
+      animation-name: fade-out;
+      animation-duration: 2s;
+      animation-fill-mode: forwards;
+    }
+
+    a {
+      margin: 10px;
+      color: #fff;
+
+      i {
+        fill: #fff;
+      }
+
+      i.fa-solid {
+        --fa-primary-opacity: 0.6;
+        --fa-secondary-opacity: 0.4;
+      }
+      i.fab {
+        opacity: 0.6;
+      }
+
+      &.selected,
+      &:hover {
+        ii.fa-solid {
+          transition: opacity 0.25s ease;
+          --fa-primary-opacity: 1;
+          --fa-secondary-opacity: 0.6;
+        }
+        i.fab {
+          transition: opacity 0.25s ease;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

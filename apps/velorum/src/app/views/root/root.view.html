@@ -1,0 +1,8 @@
+<velorum-social-links *ngIf="ui.showSocialLinks"></velorum-social-links>
+
+<div
+  class="router-container"
+  [@fadeAnimation]="outlet.isActivated ? outlet.activatedRoute : ''"
+>
+  <router-outlet #outlet="outlet"></router-outlet>
+</div>

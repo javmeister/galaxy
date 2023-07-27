@@ -1,0 +1,376 @@
+
+.webgl,
+.css2d {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  bottom: 0px;
+  flex: 1;
+
+  width: 100%;
+  height: 100%;
+}
+.webgl {
+  z-index: 2;
+}
+.css2d {
+  z-index: 4;
+  pointer-events: none;
+}
+
+
+
+.system-hover-callout,
+.system-selected-callout,
+.system-intro-callout {
+  cursor: pointer;
+  white-space: nowrap;
+
+  .details {
+    position: absolute;
+
+    top: -22px;
+    left: 30px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    padding: 1px 50px 1px 12px;
+
+    .name {
+      color: #fff;
+      font-size: 1.3rem;
+      font-weight: 300;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+
+      text-shadow: none;
+    }
+  }
+}
+
+.system-hover-callout {
+  .details {
+    background: none;
+    border: 4px solid transparent;
+
+    .name {
+      color: #8d969c;
+      // font-weight: 300;
+      letter-spacing: 2px;
+    }
+  }
+}
+
+.system-selected-callout {
+
+  .details {
+    top: -18px;
+    left: 30px;
+
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.85) 60%, rgba(0,0,0,0) 100%);
+
+    border-left: 4px solid #fff;
+  }
+
+  .reticle-container {
+    position: absolute;
+    top: -13px;
+    left: -13px;
+
+    border-radius: 3px;
+
+
+    width: 26px;
+    height: 26px;
+
+    .reticle {
+      display: block;
+      position: relative;
+      width: 25px;
+      height: 25px;
+      border-radius: 3px;
+      border: 3px solid transparent;
+      border-color: #6cbaf1;
+
+      transform: rotate(45deg);
+    }
+    .reticle:before {
+      content: '';
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      right: 2px;
+      bottom: 2px;
+      border-radius: 3px;
+      border: 3px solid transparent;
+      border-color: #FFF;
+    }
+  }
+
+}
+
+.system-intro-callout {
+  pointer-events: auto;
+
+  .details {
+    top: -18px;
+    left: 30px;
+
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.85) 60%, rgba(0,0,0,0) 100%);
+
+    border-left: 4px solid #fff;
+  }
+
+  .reticle-container {
+    position: absolute;
+    top: -13px;
+    left: -13px;
+
+    border-radius: 3px;
+
+    width: 26px;
+    height: 26px;
+
+    cursor: pointer;
+
+    animation: onoff 0.75s linear infinite;
+
+    .reticle {
+      display: block;
+      position: relative;
+      width: 25px;
+      height: 25px;
+      border-radius: 3px;
+      border: 3px solid transparent;
+      border-color: #6cbaf1;
+
+      transform: rotate(45deg);
+    }
+    .reticle:before {
+      content: '';
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      right: 2px;
+      bottom: 2px;
+      border-radius: 3px;
+      border: 3px solid transparent;
+      border-color: #FFF;
+    }
+  }
+
+
+}
+
+.galaxy-poi-callout {
+  cursor: pointer;
+  white-space: nowrap;
+
+  pointer-events: none;
+  animation-name: fade-out !important;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+
+  .reticle {
+    position: relative;
+
+    border: solid 3px #FFF;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    transition: all 0.125s ease-in-out;
+
+    .reticle-dot {
+      border: solid 3px #FF9D00;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      transition: all 0.125s ease-in-out;
+    }
+  }
+
+  .info {
+    border-radius: 0;
+
+    position: absolute;
+    top: -14px;
+    left: 25px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+
+    opacity: 1;
+    transition: all 0.125s ease-in-out;
+
+    .avatar {
+      border-radius: 0;
+      border: solid 2px #fff;
+      background-size: cover;
+
+      width: 44px;
+      height: 44px;
+      padding: 8px;
+
+      opacity: 1;
+      transition: all 0.125s ease-in-out;
+    }
+
+    .details {
+      padding: 2px 44px 2px 10px;
+      background: rgb(0,0,0);
+      background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+
+      min-height: 44px;
+
+      -webkit-font-smoothing: antialiased;
+	    -moz-osx-font-smoothing: antialiased;
+	    font-smoothing: antialiased;
+
+      display:flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-around;
+
+      span {
+        font-weight: 700;
+        font-size: 15px;
+        text-transform: uppercase;
+        display: block;
+        white-space: nowrap;
+        letter-spacing: 1px;
+
+        opacity: 1;
+        transition: all 0.125s ease-in-out;
+
+        &.description {
+          text-transform: none;
+          font-weight: 500;
+          font-size: 12px;
+          color: #ddd !important;
+          letter-spacing: 0px;
+          font-family: Rajdhani;
+        }
+      }
+    }
+  }
+
+  &.orange {
+    .info {
+      span {
+        color: var(--orange-0);
+      }
+    }
+  }
+
+  &.fade-in {
+    pointer-events: auto !important;
+    animation-name: fade-in !important;
+    animation-duration: 0.5s !important;
+    animation-fill-mode: forwards !important;
+  }
+
+  &.fade-out {
+    opacity: 0 !important;
+    transition: opacity 0.5s linear;
+  }
+}
+
+.sector-hover-label,
+.sector-player-owned-label {
+  .reticle {
+    display: block;
+
+    position: relative;
+    top: -5px;
+
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+    border: 3px solid transparent;
+    border-color: #fff;// #6cbaf1;
+
+    transform: rotate(45deg);
+  }
+  .reticle:before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    border-radius: 3px;
+    border: 3px solid transparent;
+    border-color: #6cbaf1;
+  }
+
+  .info {
+    min-width: 100px;
+    height: 22px;
+
+    white-space: nowrap;
+
+    padding: 2px 10px 2px 30px;
+
+    position: absolute;
+    top: -15px;
+    left: 40px;
+
+    line-height: 20px;
+
+    text-transform: uppercase;
+
+    padding: 2px 44px 2px 10px;
+    background: #0c5b99;
+    background: linear-gradient(90deg, #0c5b99 0%, #2196f3 60%, rgba(0,0,0,0) 100%);
+    border-left: solid 3px #fff;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+}
+
+.sector-player-owned-label {
+  .reticle {
+    border-color: #fff;
+    cursor: pointer;
+  }
+  .reticle:before {
+    border-color: #6ef16c;
+  }
+
+  .info {
+    height: auto;
+  }
+
+
+  &.fade-in {
+    pointer-events: auto;
+    animation-name: fade-in;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+  }
+
+  &.fade-out {
+    pointer-events: none;
+    animation-name: fade-out !important;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+  }
+}
+
+
+

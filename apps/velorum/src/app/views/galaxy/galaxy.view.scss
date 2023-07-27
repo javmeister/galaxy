@@ -1,0 +1,76 @@
+:host {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  padding: 10px;
+
+  .actions {
+    position: absolute;
+
+    z-index: 6;
+
+    width: 20%;
+
+    height: 58px;
+
+    bottom: 0px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.left {
+      padding-left: 80px;
+      width: 24%;
+      left: 0px;
+    }
+
+    &.right {
+      padding-right: 200px;
+      padding-left: 20px;
+      width: 24%;
+      right: 0px;
+    }
+
+    &.center {
+      width: 200px;
+      left: calc(50% - 100px);
+    }
+  }
+
+  .callouts-toggle-action {
+    opacity: 0;
+    transition: 0.25s opacity;
+
+    &.fade-in {
+      transition: 1s opacity;
+      opacity: 1;
+    }
+  }
+
+  sl-dialog.poi-dialog::part(body) {
+    padding: 0;
+  }
+
+  sl-dialog.poi-dialog::part(body)::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  sl-dialog.poi-dialog::part(body)::-webkit-scrollbar-track {
+    background: #3a3e41;
+    // border-radius: 50%;
+  }
+
+  sl-dialog.poi-dialog::part(body)::-webkit-scrollbar-thumb {
+    background: #5c6264;
+    border-radius: 2px;
+  }
+
+  sl-dialog.poi-dialog::part(body)::-webkit-scrollbar-thumb:hover {
+    background: #1a98cf;
+    border-radius: 2px;
+  }
+
+
+}

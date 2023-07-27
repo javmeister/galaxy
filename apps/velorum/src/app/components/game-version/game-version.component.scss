@@ -1,0 +1,44 @@
+:host {
+  position: absolute;
+  top: 8px;
+  right: 20px;
+
+  z-index: 6;
+
+  width: 18%;
+
+  .grouper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    opacity: 0;
+    transition: 0.5s opacity;
+
+    &.fade-in {
+      opacity: 1;
+      transition: 1s opacity;
+    }
+  }
+
+  .stat {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+
+    span {
+      letter-spacing: 2px;
+
+      &.value {
+        font-weight: 300;
+        padding-left: 20px;
+        letter-spacing: 2px;
+        text-align: right;
+        color: #999;
+      }
+    }
+
+  }
+}

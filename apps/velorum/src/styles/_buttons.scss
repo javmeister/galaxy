@@ -1,0 +1,76 @@
+sl-button.main {
+  &::part(base) {
+    font-family: 'Saira Extra Condensed', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+
+    border-radius: 2px;
+
+    background-color: #fff;
+    border-color: #fff;
+  }
+}
+
+sl-button.main[size="small"]::part(base) {
+  font-size: 1rem;
+}
+
+sl-button.main[size="large"]::part(base) {
+  font-size: 2rem;
+}
+
+sl-button.main[outline]::part(base) {
+  background-color: transparent;
+  color: #fff;
+
+  transition: all 0.1s ease;
+
+  &:hover {
+    background-color: #fff;
+    color: #000;
+
+    transition: all 0.1s ease;
+  }
+}
+
+
+
+
+sl-button.success {
+  &::part(base) {
+    font-family: 'Saira Extra Condensed', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+
+    border-radius: 2px;
+
+    background-color: #299620;
+    border-color: #07c40e;
+    color: #fff;
+  }
+}
+
+sl-button.success[size="small"]::part(base) {
+  font-size: 1rem;
+}
+
+sl-button.success[size="large"]::part(base) {
+  font-size: 2rem;
+}
+
+sl-button.success[outline]::part(base) {
+  background-color: transparent;
+  color: #fff;
+
+  transition: all 0.1s ease;
+
+  &:hover {
+    background-color: #2a9620bf;
+    // color: #000;
+
+    transition: all 0.1s ease;
+  }
+}
+

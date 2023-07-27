@@ -1,0 +1,30 @@
+<div class="rarity-label uppercase">{{ rarity }}</div>
+
+<div class="system-name p-3 w-full bottom-separator flex flex-col">
+  <span class="label">SYSTEM</span>
+  <span class="name">{{ system?.name }}</span>
+</div>
+
+<div class="system-details p-3 w-full bottom-separator flex flex-col flex-fill">
+  <div class="extended-description pb-3" [innerHTML]="description"></div>
+  <div class="stars-description">
+    <div *ngFor="let star of system?.stars" class="star-description flex flex-row mb-2">
+      <div class="star-icon mr-2 flex flex-col items-center justify-center" [ngClass]="star.classId">
+        <i class="fa-solid fa-circle-dot"></i>
+      </div>
+      <div class="star-details flex flex-col items-start justify-center">
+        <span class="star-class">{{ star.stellarClass }}</span>
+        <span class="star-stats"><span class="radius mr-2">{{ star.radius }}</span><span class="units mr-4">R☉</span><span class="mass mr-2">{{ star.mass }}</span><span class="units">M☉</span></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Details -->
+<div class="nft-details p-3">
+  <div class="h-52 mb-3 overflow-hidden rounded-sm">
+    <img class="-mt-20" src="{{ thumbnail }}">
+  </div>
+</div>
+
+

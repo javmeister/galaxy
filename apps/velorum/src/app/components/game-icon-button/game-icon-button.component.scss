@@ -1,0 +1,61 @@
+:host {
+  position: relative;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: all 0.25s;
+
+  .key {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 34px;
+      height: 34px;
+
+      background-color: rgb(0 0 0 / 0%);
+      border-radius: 20%;
+      transition: all 0.25s;
+      border: solid 2px #ffffff6b;
+
+      transition: all 0.25s;
+
+      i {
+        color: #ffffffba;
+        transition: all 0.25s;
+        font-size: 14px;
+        text-shadow: none;
+      }
+    }
+  }
+
+  &.round {
+    .key {
+      .button {
+        border-radius: 50%;
+      }
+    }
+  }
+
+  &:hover,
+  &.active {
+    .key {
+      .button {
+        background-color: #ffffff;
+        i {
+          color: #000;
+        }
+      }
+    }
+  }
+}

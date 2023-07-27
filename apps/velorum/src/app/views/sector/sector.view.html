@@ -1,0 +1,12 @@
+
+<div class="actions center">
+  <velorum-game-button class="galaxy-view-action"
+    [keyCode]="'g'"
+    [keyCodeText]="'G'"
+    [text]="'Galaxy View'"
+    [ngClass]="{'fade-in': showActionButtons}"
+    (pressed)="onGalaxyViewActionClick()"
+    (click)="onGalaxyViewActionClick($event)"></velorum-game-button>
+
+</div>
+
